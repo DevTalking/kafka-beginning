@@ -8,11 +8,11 @@ import org.slf4j.LoggerFactory;
 
 import java.util.Properties;
 
-public class ProducerDemoWithCallback {
+public class ProducerDemoWithKeys {
 
     public static void main(String[] args) {
 
-        final Logger logger = LoggerFactory.getLogger(ProducerDemoWithCallback.class);
+        final Logger logger = LoggerFactory.getLogger(ProducerDemoWithKeys.class);
 
         // Create producer properties.
         Properties properties = new Properties();
@@ -23,8 +23,8 @@ public class ProducerDemoWithCallback {
         // Create producer.
         KafkaProducer<String, String> kafkaProducer = new KafkaProducer<String, String>(properties);
 
-        // Create producer record.
-        ProducerRecord<String, String> producerRecord = new ProducerRecord<String, String>(KafkaConstant.FIRST_TOPIC, "hello world!");
+        // Create producer record with key.
+        ProducerRecord<String, String> producerRecord = new ProducerRecord<String, String>(KafkaConstant.FIRST_TOPIC, "This is the key","hello world!");
 
         // Send data - asynchronous
         kafkaProducer.send(producerRecord, new Callback() {
