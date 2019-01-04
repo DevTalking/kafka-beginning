@@ -1,4 +1,4 @@
-package com.devtalking.jacefu.kafka.tutorial1;
+package com.devtalking.jacefu.kafka.tutorial;
 
 import com.detalking.jacefu.kafka.KafkaConstant;
 import org.apache.kafka.clients.producer.*;

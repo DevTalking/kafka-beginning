@@ -1,4 +1,4 @@
-package com.devtalking.jacefu.kafka.tutorial1;
+package com.devtalking.jacefu.kafka.tutorial;
 
 import com.detalking.jacefu.kafka.KafkaConstant;
 import org.apache.kafka.clients.consumer.*;
@@ -22,7 +22,7 @@ public class ConsumerDemo {
         properties.setProperty(ConsumerConfig.KEY_DESERIALIZER_CLASS_CONFIG, StringDeserializer.class.getName());
         properties.setProperty(ConsumerConfig.VALUE_DESERIALIZER_CLASS_CONFIG, StringDeserializer.class.getName());
         properties.setProperty(ConsumerConfig.GROUP_ID_CONFIG, KafkaConstant.CONSUMER_GROUP_ONE);
-        properties.setProperty(ConsumerConfig.AUTO_OFFSET_RESET_CONFIG, "latest"); // latest, none
+        properties.setProperty(ConsumerConfig.AUTO_OFFSET_RESET_CONFIG, "latest"); // earliest, none
 
         // create consumer
         KafkaConsumer<String, String> consumer = new KafkaConsumer<String, String>(properties);
